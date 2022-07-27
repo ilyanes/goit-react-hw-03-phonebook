@@ -1,5 +1,5 @@
 import { Component } from 'react';
-
+import PropTypes from 'prop-types';
 class ContactForm extends Component {
   state = {
     name: '',
@@ -58,5 +58,9 @@ class ContactForm extends Component {
     );
   }
 }
+
+ContactForm.propTypes = {
+  handelAddContact: PropTypes.func.isRequired,
+};
 
 export default ContactForm;

@@ -5,6 +5,8 @@ import Filter from './Filter/';
 import filter from './data/filter';
 import shortid from 'shortid';
 import { Container } from './App.styled.jsx';
+import Header from './Header/Header';
+import Section from './Section/Section';
 
 class App extends Component {
   state = {
@@ -60,17 +62,19 @@ class App extends Component {
           color: 'blue',
         }}
       >
-        <h1>Phonebook</h1>
-        <ContactForm handelAddContact={this.handelAddContact} />
-        <h1>Contacts</h1>
-        <Filter
-          filter={this.state.filter}
-          handleChangeFilter={this.handleChangeFilter}
-        />
-        <ContactList
-          contacts={filter(this.state.contacts, this.state.filter)}
-          deleteContact={this.deleteContact}
-        />
+        <Header title={'PhoneBook'}>
+          <ContactForm handelAddContact={this.handelAddContact} />
+        </Header>
+        <Section title={'Contacts'}>
+          <Filter
+            filter={this.state.filter}
+            handleChangeFilter={this.handleChangeFilter}
+          />
+          <ContactList
+            contacts={filter(this.state.contacts, this.state.filter)}
+            deleteContact={this.deleteContact}
+          />
+        </Section>
       </Container>
     );
   }

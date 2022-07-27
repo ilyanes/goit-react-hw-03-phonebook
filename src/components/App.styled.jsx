@@ -12,4 +12,5 @@ export const Container = styled.div`
   border-radius: 20px;
   box-shadow: 4px 3px 6px 4px rgba(155, 155, 155, 0.75);
   padding: 40px;
+  text-align: center;
 `;
